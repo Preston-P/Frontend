@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Ruhl";
+  src: url(/fonts/FrankRuhlLibre-Regular.ttf);
+}
+@font-face {
+  font-family: "Ruhl Medium";
+  src: url(/fonts/FrankRuhlLibre-Medium.ttf);
+}
+@font-face {
+  font-family: "Vibes";
+  src: url(/fonts/GreatVibes-Regular.ttf);
+}
+@font-face {
+  font-family: "Great";
+  src: url(/fonts/FrederickatheGreat-Regular.ttf);
+}
+html {
+  font-size: 62.5%;
+  --header1: calc(2rem + 1vw); /* Variables in css 20 px and 10px width*/
+  --header2: calc(3.5rem + 1vw);
+  --header3: calc(3rem + 1vw);
+  --header4: calc(2.4rem + 1vw);
+  --text: calc(1.5rem + 1vw);
+  --big: calc(2.4rem + 1vw);
+  --special-color: #906272;
+  --background-color: #414141;
+  --gray-text: #525252;
+}
+
+h1 {
+  font-size: var(--header1); /* How to declare a variable*/
+}
+li,
+button,
+label,
+input,
+a,
+p {
+  font-size: var(--text);
+}
+
+h2 {
+  font-size: var(--header2);
+}
+
+h3 {
+  font-size: var(--header3);
+}
+
+h4,
+h5 {
+  font-size: var(--header4);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  /*  Helper function used to flexbox and center stuff*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: "Ruhl", sans-serif;
+}
+
+h1 {
+  font-family: "Vibes", sans-serif;
+}
+/* Nav section*/
+
+.main-head {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+}
+
+nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  min-height: 10vh;
+  padding: 2rem 0rem;
+}
+
+#logo {
+  flex: 1 1 20rem;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  flex: 1 1 20rem;
+}
+
+.hero {
+  min-height: 90vh;
+  width: 95%;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero-introduction {
+  flex: 2 1 40rem;
+  text-align: center;
+}
+
+.hero-introduction p {
+  padding: 5rem 10rem;
+}
+.hero-introduction h2 {
+  padding-top: 3rem;
+}
+.hero-introduction a {
+  padding: 2rem 8rem;
+  border: 3px solid black;
+}
+.hero-image,
+.bottom {
+  flex: 1 1 40rem;
+  background: linear-gradient(#dad8dd, #dad1d4);
+}
+
+.hero-flower {
+  height: 100%;
+  width: 95%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+@media screen and (max-width: 842px) {
+  .burger span {
+    padding: 0.2rem 2rem;
+    background: var(--gray-text);
+    margin: 0.5rem 0rem;
+    display: block;
+  }
+  .nav-links a {
+    color: white;
+    font-size: var(--header3);
+    text-decoration: underline;
+  }
+
+  .nav-links {
+    background: var(--background-color);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
