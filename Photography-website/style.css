@@ -200,7 +200,7 @@ nav {
   object-fit: cover;
 }
 
-/*Gallery section*/
+/*Gallery section     Grid and row is where its positioned*/
 
 .gallery {
   display: grid;
@@ -216,15 +216,19 @@ nav {
   object-fit: cover;
 }
 
+/* the grid and column is for the text caption alignmet*/
 .gallery-head {
   /* Singapore image*/
   position: absolute;
-  top: 50%;
-  left: 48%;
+  grid-column: 2/3;
+  grid-row: 2;
+  top: 70%;
+  left: 8%;
   bottom: 31.5%;
-  transform: translate(-100%, 100%);
+  transform: translate(-100%, -100%);
   color: white;
   font-family: "Great", sans-serif;
+  font-size: larger;
 }
 
 .gallery2-head {
@@ -249,6 +253,7 @@ nav {
   transform: translate(-30%, 100%);
   color: white;
   font-family: "Great", sans-serif;
+  background: black;
 }
 .gallery4-head {
   /*Japanese river*/
@@ -274,6 +279,15 @@ nav {
 }
 
 /* change where the image is placed*/
+
+.gallery-head {
+  grid-column: 2;
+  grid-row: 2;
+}
+.gallery {
+  grid-column: 2;
+  grid-row: 2;
+}
 .gallery1 {
   grid-column: 1/3;
   grid-row: 2;
@@ -291,6 +305,70 @@ nav {
 .gallery5 {
   grid-row: 1;
   grid-column: 2;
+}
+
+/*Contact section*/
+.contact {
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-wrapper {
+  flex: 3 1 40rem;
+}
+.form-wrapper {
+  font-size: var(--big);
+}
+.form-wrapper span {
+  font-size: var(--big);
+  color: var(--special-color);
+}
+.form-wrapper label {
+  display: block;
+}
+
+.form-wrapper input {
+  display: block;
+  margin: 3rem 0rem;
+  background: lightgrey;
+  color: white;
+  border: none;
+  padding: 1rem;
+}
+
+.form-wrapper button {
+  padding: 1rem 8rem;
+  background: var(--special-color);
+  color: white;
+  border: none;
+  width: 100%;
+}
+
+.contact img {
+  flex: 1 1 40rem;
+  height: 100%;
+  width: 100%;
+}
+
+/* Footer*/
+
+footer {
+  background: var(--background-color);
+  display: flex;
+  color: white;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 40rem;
+}
+footer h4 {
+  flex: 3 1 40rem;
+  font-size: calc(1.4rem + 1.4vw);
 }
 @media screen and (max-width: 842px) {
   .hero {
@@ -352,5 +430,16 @@ nav {
   .gallery {
     /* can just use this for simple grid*/
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+
+  .gallery-head,
+  .gallery2-head,
+  .gallery3-head,
+  .gallery4-head,
+  .gallery5-head {
+    display: none;
+  }
+  .contact img {
+    display: none;
   }
 }
