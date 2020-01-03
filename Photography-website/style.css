@@ -31,6 +31,7 @@ html {
   --special-color: #906272;
   --background-color: #414141;
   --gray-text: #525252;
+  scroll-behavior;
 }
 
 h1 {
@@ -228,7 +229,7 @@ nav {
   transform: translate(-100%, -100%);
   color: white;
   font-family: "Great", sans-serif;
-  font-size: larger;
+  font-size: x-large;
 }
 
 .gallery2-head {
@@ -237,8 +238,8 @@ nav {
   grid-column: 3;
   grid-row: 2;
   top: 62%;
-  left: 60%;
-  transform: translate(-100%, 100%);
+  left: 63%;
+  transform: translate(-50%, 100%);
   color: white;
   font-family: "Great", sans-serif;
 }
@@ -307,6 +308,35 @@ nav {
   grid-column: 2;
 }
 
+/*Css grid implementation*/
+/*
+.contact {
+  display: grid;
+  min-height: 70vh;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+}
+
+.contact img {
+  height: 120%;
+  width: 130%;
+  object-fit: cover;
+}
+
+.form-wrapper {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.contact img {
+  grid-column: 3;
+  grid-row: 1;
+  position: relative;
+  object-fit: fill;
+}
+*/
+/* keep aspect ratio of images*/
+
 /*Contact section*/
 .contact {
   min-height: 90vh;
@@ -314,11 +344,20 @@ nav {
   flex-wrap: wrap;
 }
 
+.contact img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  flex: 5 3 60rem;
+}
+
 .form-wrapper {
   flex: 3 1 40rem;
-}
-.form-wrapper {
   font-size: var(--big);
+}
+
+.form-wrapper h2 {
+  margin-bottom: 3rem;
 }
 .form-wrapper span {
   font-size: var(--big);
@@ -345,12 +384,6 @@ nav {
   width: 100%;
 }
 
-.contact img {
-  flex: 1 1 40rem;
-  height: 100%;
-  width: 100%;
-}
-
 /* Footer*/
 
 footer {
@@ -370,15 +403,27 @@ footer h4 {
   flex: 3 1 40rem;
   font-size: calc(1.4rem + 1.4vw);
 }
+
 @media screen and (max-width: 842px) {
   .hero {
     width: 100%;
+  }
+
+  .hero-introduction p {
+    padding: 5rem 3rem;
+  }
+
+  .burger {
+    position: relative;
+    display: block;
+    cursor: pointer;
   }
   .burger span {
     padding: 0.2rem 2rem;
     background: var(--gray-text);
     margin: 0.5rem 0rem;
     display: block;
+    transition: all 0.5s ease;
   }
   .nav-links a {
     color: white;
@@ -399,23 +444,20 @@ footer h4 {
     transition: transform 1s ease;
   }
 
-  .menu-check {
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translate(5%, -50%);
-    width: 5rem;
-    height: 5rem;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 100;
+  .nav-open {
+    transform: translateX(-100%);
   }
 
-  .menu-check:checked + .nav-links {
-    transform: translate(-100%);
+  .toggle .line1 {
+    transform: rotateZ(45deg) translateY(300%);
+    background: white;
   }
-  .menu-check:checked ~ .nav-links {
-    transform: translate(-100%);
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotateZ(-45deg) translateY(-300%);
+    background: white;
   }
 
   .about-text div {
@@ -441,5 +483,38 @@ footer h4 {
   }
   .contact img {
     display: none;
+  }
+  footer ul {
+    order: 1;
+  }
+  footer h4 {
+    order: 2;
+    text-align: center;
+    padding: 1rem;
+  }
+  .nav-open {
+    transform: translateX(-100%);
+  }
+
+  .toggle .line1 {
+    transform: rotateZ(45deg) translateY(300%);
+    background: white;
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotateZ(-45deg) translateY(-300%);
+    background: white;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  html {
+    --header1: 3rem;
+    --header2: 5rem;
+    --header3: 3.5rem;
+    --header4: 2.5rem;
+    --big: 6rem;
   }
 }
