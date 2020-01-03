@@ -20,16 +20,16 @@
     <header class="main-head">
       <nav>
         <h1 id="logo">Preston Phan</h1>
-        <input type="checkbox" class="menu-check" />
+
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#work">Work </a></li>
+          <li><a href="#gallery">Gallery </a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="burger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
         </div>
       </nav>
     </header>
@@ -51,7 +51,7 @@
           />
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="about-image flex">
           <h5>Seoul Korea</h5>
           <img src="/img/tower.jpg" alt="Namsan tower" />
@@ -83,7 +83,7 @@
         </div>
       </section>
       <section>
-        <div class="gallery">
+        <div class="gallery" id="gallery">
           <div class="gallery-head"><p>Singapore</p></div>
           <div class="gallery2-head"><p>Korea | Jeju | Seogwipo-si</p></div>
           <div class="gallery3-head"><p>Japan | Kiyomizu-dera</p></div>
@@ -101,7 +101,7 @@
           <img class="gallery5" src="/img/alleyway.png" alt="alley" />
         </div>
       </section>
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="form-wrapper flex">
           <h2>
             Get in <br />
@@ -130,6 +130,7 @@
         </li>
       </ul>
     </footer>
+    <script src="/app.js"></script>
   </body>
 </html>
 
