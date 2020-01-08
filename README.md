@@ -1,2 +1,2 @@
 # Frontend
-Web applications currently working on
+Html and Css only
